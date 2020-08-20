@@ -25,26 +25,52 @@ export default {
     },
   },
   actions: {
-    createEvent({ commit }, event) {
+    createEvent({ commit, dispatch }, event) {
       return EventService.postEvent(event)
-        .then(() => commit('ADD_EVENT', event));
+        .then(() => {
+          commit('ADD_EVENT', event);
+          const notification = {
+            type: 'success',
+            message: 'Your event has been created!',
+          };
+          dispatch('addNotification', notification, { root: true });
+        }).catch((error) => {
+          const notification = {
+            type: 'error',
+            message: `There was a problem creating your event: ${error.message}`,
+          };
+          dispatch('addNotification', notification, { root: true });
+          throw error;
+        });
     },
-    fetchEvents({ commit }, { perPage, page }) {
+    fetchEvents({ commit, dispatch }, { perPage, page }) {
       EventService.getEvents(perPage, page)
         .then((response) => {
           commit('SET_TOTAL', response.headers['x-total-count']);
           commit('SET_EVENTS', response.data);
         })
-        .catch((error) => console.log('There was an error:', error.response));
+        .catch((error) => {
+          const notification = {
+            type: 'error',
+            message: `There was a problem fetching events: ${error.message}`,
+          };
+          dispatch('addNotification', notification, { root: true });
+        });
     },
-    fetchEvent({ commit, getters }, id) {
+    fetchEvent({ commit, dispatch, getters }, id) {
       const event = getters.getEventById(id);
       if (event) {
         commit('SET_EVENT', event);
       } else {
         EventService.getEvent(id)
           .then((response) => commit('SET_EVENT', response.data))
-          .catch((error) => console.log('There was an error:', error.response));
+          .catch((error) => {
+            const notification = {
+              type: 'error',
+              message: `There was a problem fetching the event: ${error.message}`,
+            };
+            dispatch('addNotification', notification, { root: true });
+          });
       }
     },
   },

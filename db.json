@@ -126,6 +126,17 @@
       "date": "2020-08-02T03:49:00.000Z",
       "time": "11:00",
       "attendees": []
+    },
+    {
+      "id": 7681165,
+      "category": "housing",
+      "organizer": "Adam",
+      "title": "test44",
+      "description": "",
+      "location": "",
+      "date": "",
+      "time": "",
+      "attendees": []
     }
   ]
 }
