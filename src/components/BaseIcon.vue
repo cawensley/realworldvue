@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="icon-wrapper" v-html="svg"></div>
+    <div class="icon icon-wrapper" v-html="svg"></div>
     <slot></slot>
   </div>
 </template>
@@ -9,8 +9,12 @@
 import feather from 'feather-icons';
 
 export default {
+  name: 'Icon',
   props: {
-    name: String,
+    name: {
+      type: String,
+      default: 'users',
+    },
     width: {
       type: [Number, String],
       default: 24,
@@ -22,7 +26,11 @@ export default {
   },
   computed: {
     svg() {
-      return feather.icons[this.name].toSvg({ class: 'icon', width: this.width, height: this.height });
+      return feather.icons[this.name].toSvg({
+        class: 'icon',
+        width: 24,
+        height: 24,
+      });
     },
   },
 };

@@ -1,0 +1,131 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Beach Cleanup",
+      "date": "Aug 28 2018",
+      "time": "10:00",
+      "location": "Daytona Beach",
+      "description": "Let's clean up this beach.",
+      "organizer": "Adam Jahr",
+      "category": "sustainability",
+      "attendees": [
+        {
+          "id": "abc123",
+          "name": "Adam Jahr"
+        },
+        {
+          "id": "def456",
+          "name": "Gregg Pollack"
+        },
+        {
+          "id": "ghi789",
+          "name": "Beth Swanson"
+        },
+        {
+          "id": "jkl101",
+          "name": "Mary Gordon"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Park Cleanup",
+      "date": "Nov 12 2018",
+      "time": "12:00",
+      "location": "132 N Magnolia Street, Orlando, Florida",
+      "description": "We're going to clean up this park.",
+      "organizer": "Adam Jahr",
+      "category": "nature",
+      "attendees": [
+        {
+          "id": "ghi789",
+          "name": "Beth Swanson"
+        },
+        {
+          "id": "jkl101",
+          "name": "Mary Gordon"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Pet Adoption Day",
+      "date": "Dec 2 2018",
+      "time": "12:00",
+      "location": "132 N Magnolia Street, Orlando, Florida",
+      "description": "Help animals find new homes.",
+      "organizer": "Gregg Pollack",
+      "category": "animal welfare",
+      "attendees": [
+        {
+          "id": "abc123",
+          "name": "Adam Jahr"
+        },
+        {
+          "id": "ghi789",
+          "name": "Beth Swanson"
+        },
+        {
+          "id": "jkl101",
+          "name": "Mary Gordon"
+        }
+      ]
+    },
+    {
+      "id": 8044861,
+      "category": "nature",
+      "organizer": "Adam Jahr",
+      "title": "Save the Turtles",
+      "description": "All turtles must live",
+      "location": "Longmont Coolorado",
+      "date": "2020-08-29T21:17:00.000Z",
+      "time": "16:00",
+      "attendees": []
+    },
+    {
+      "id": 6464110,
+      "category": "animal welfare",
+      "organizer": "Adam Jahr",
+      "title": "Cat Adoption Mandatory",
+      "description": "save all black cats",
+      "location": "boulder CO",
+      "date": "2020-08-15T21:18:00.000Z",
+      "time": "8:00",
+      "attendees": []
+    },
+    {
+      "id": 8414965,
+      "category": "housing",
+      "organizer": "Adam Jahr",
+      "title": "Burning houses",
+      "description": "bring your gasoline",
+      "location": "all over",
+      "date": "2020-08-04T21:36:00.000Z",
+      "time": "11:00",
+      "attendees": []
+    },
+    {
+      "id": 7806650,
+      "category": "community",
+      "organizer": "Adam Jahr",
+      "title": "rounding up the rabble rousers",
+      "description": "git yur guns",
+      "location": "nebraska",
+      "date": "2020-08-20T23:00:00.000Z",
+      "time": "17:00",
+      "attendees": []
+    },
+    {
+      "id": 3362254,
+      "category": "housing",
+      "organizer": "Adam",
+      "title": "asdfsf",
+      "description": "ffdsdfas",
+      "location": "sadfsfdsa",
+      "date": "2020-08-02T03:49:00.000Z",
+      "time": "11:00",
+      "attendees": []
+    }
+  ]
+}
