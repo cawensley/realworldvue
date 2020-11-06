@@ -9,6 +9,7 @@ export default {
     events: [],
     totalEvents: 0,
     event: {},
+    perPage: 3,
   },
   mutations: {
     ADD_EVENT(state, event) {
@@ -43,8 +44,8 @@ export default {
           throw error;
         });
     },
-    fetchEvents({ commit, dispatch }, { perPage, page }) {
-      EventService.getEvents(perPage, page)
+    fetchEvents({ commit, dispatch, state }, { page }) {
+      return EventService.getEvents(state.perPage, page)
         .then((response) => {
           commit('SET_TOTAL', response.headers['x-total-count']);
           commit('SET_EVENTS', response.data);
@@ -57,21 +58,19 @@ export default {
           dispatch('addNotification', notification, { root: true });
         });
     },
-    fetchEvent({ commit, dispatch, getters }, id) {
+    // eslint-disable-next-line consistent-return
+    fetchEvent({ commit, getters }, id) {
       const event = getters.getEventById(id);
+
       if (event) {
         commit('SET_EVENT', event);
-      } else {
-        EventService.getEvent(id)
-          .then((response) => commit('SET_EVENT', response.data))
-          .catch((error) => {
-            const notification = {
-              type: 'error',
-              message: `There was a problem fetching the event: ${error.message}`,
-            };
-            dispatch('addNotification', notification, { root: true });
-          });
+        return event;
       }
+      return EventService.getEvent(id)
+        .then((response) => {
+          commit('SET_EVENT', response.data);
+          return response.data;
+        });
     },
   },
   getters: {
